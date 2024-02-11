@@ -1,0 +1,41 @@
+import { usePathname } from "next/navigation";
+import React from "react";
+import NavLinks, { navLinks } from "./NavLinks";
+import { animate, motion } from "framer-motion";
+
+type Props = {};
+
+function NavItem({}: Props) {
+  const pathname = usePathname() as string;
+
+  return (
+    <>
+      {navLinks[pathname] ? (
+        <div className="hidden lg:block">
+          <motion.div
+            className="absolute bg-secondary h-10 rounded-full z-[-1]"
+            layoutId="nav-item"
+            initial={{
+              opacity: 0,
+              x: navLinks[pathname].x,
+              y: navLinks[pathname].y,
+            }}
+            animate={{
+              opacity: 1,
+              x: navLinks[pathname].x,
+              width: navLinks[pathname].w,
+            }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+          />
+        </div>
+      ) : null}
+      <NavLinks />
+    </>
+  );
+}
+
+export default NavItem;

@@ -24,7 +24,7 @@ export default function RootLayout({
       className={cn(poppins.className, "bg-background text-secondary dark")}
     >
       <body className=" transition ">
-        <Header/>
+        <Header />
         <main className="flex flex-col justify-center items-center mx-auto">
           {children}
         </main>

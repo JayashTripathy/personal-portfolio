@@ -4,9 +4,9 @@ type Props = {};
 
 function HomeSection({}: Props) {
   return (
-    <main>
+    <div>
       <div>HomeSection</div>
-    </main>
+    </div>
   );
 }
 

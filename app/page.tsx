@@ -5,9 +5,9 @@ type Props = {};
 
 function Page({}: Props) {
   return (
-    <main>
+    <div>
       <HomeSection />
-    </main>
+    </div>
   );
 }
 
