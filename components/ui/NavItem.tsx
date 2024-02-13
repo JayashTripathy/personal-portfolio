@@ -28,7 +28,7 @@ function NavItem({}: Props) {
             transition={{
               type: "spring",
               stiffness: 260,
-              damping: 20,
+              damping: 30,
             }}
           />
         </div>

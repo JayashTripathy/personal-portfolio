@@ -51,7 +51,7 @@ function NavLinks({}: Props) {
             href={path}
             className={cn(
               "hidden lg:inline-block transtion ease text-secondary-foreground/30 hover:text-primary py-[2px] px-[10px]",
-              path === pathname && "text-primary"
+              path === pathname && "text-primary font-bold"
             )}
           >
             {name}
