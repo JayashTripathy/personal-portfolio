@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import MenuButton from "./MenuButton";
-import { motion } from "framer-motion";
+import { AnimationProps, animate, motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 import useDelayedToggle from "@/hooks/useDelayedToggle";
 
@@ -8,25 +8,30 @@ type Props = {};
 
 function MobileNav({}: Props) {
   const { isOpen, toggleOpen, isRendered, isMounted } = useDelayedToggle();
-  const animationVariants = {
+  const animationVariants: AnimationProps["variants"] = {
     open: {
-      x: 0,
       opacity: 1,
-
+      height: "50%",
+      width: "100%",
+      borderRadius: ["0% 80% 100% 80%", "0% 80% 80% 80%", "0% 0% 10% 10%"],
       transition: {
-        x: { stiffness: 1000, velocity: -100 },
+        duration: 0.3,
+        ease: "circIn",
       },
     },
     closed: {
-      x: "100%",
       opacity: 0,
+      height: 0,
+      width: 0,
+      borderRadius: ["0% 0% 10% 10%", "0% 80% 80% 80%", "0% 80% 100% 80%"],
       transition: {
-        x: { stiffness: 1000 },
+        duration: 0.3,
+        ease: "circOut",
       },
     },
   };
   const variant = isOpen ? "open" : "closed";
-
+  console.log(isMounted, isRendered, isOpen);
   return (
     <>
       <button
@@ -40,9 +45,9 @@ function MobileNav({}: Props) {
           className={cn("fixed top-0 left-0 h-screen w-screen overflow-hidden")}
         >
           <motion.div
-            className=" bg-primary h-full w-full  "
+            className="bg-primary"
             variants={animationVariants}
-            initial="closed"
+            initial="open"
             animate={variant}
           >
             Mobile navbar

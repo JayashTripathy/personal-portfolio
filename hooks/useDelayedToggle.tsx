@@ -7,7 +7,7 @@ function useDelayedToggle() {
   const { mounted: isMounted, rendered: isRendered } = useDelayedRender(
     isOpen,
     {
-      enterDelay: 20,
+      enterDelay: 0,
       exitDelay: 1000,
     }
   );
