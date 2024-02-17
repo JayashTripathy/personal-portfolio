@@ -81,7 +81,7 @@ export const MobilleNavLinks = ({
     visible: {
       opacity: 1,
       transition: {
-        delayChildren: 0.3,
+        delayChildren: 0.2,
         staggerChildren: 0.1,
       },
     },

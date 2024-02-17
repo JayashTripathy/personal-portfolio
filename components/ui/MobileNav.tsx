@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import MenuButton from "./MenuButton";
 import {
   AnimatePresence,
@@ -8,57 +8,56 @@ import {
 } from "framer-motion";
 import { cn } from "@/lib/utils";
 import { MobilleNavLinks } from "./NavLinks";
-import { useOutsideClick } from "@/hooks/useOutsideClick";
+
+import { MoreVertical } from "lucide-react";
 
 function MobileNav() {
   const [isToggled, setToggled] = useState(false);
-  const outSideClickRef = useOutsideClick(() => setToggled(false));
   const animationVariants: AnimationProps["variants"] = {
     visible: {
       opacity: 1,
-      height: "55%",
+      height: "100%",
       width: "100%",
-      clipPath: "circle(95% at 50% 0%)",
+
       transition: {
-        duration: 0.5,
+        duration: 0.2,
         ease: "circIn",
       },
     },
     hidden: {
       opacity: 0,
-      height: "50%",
+      height: "0%",
       width: "100%",
-      clipPath: "circle(0% at 100% 0%)",
+
       transition: {
-        duration: 0.5,
+        duration: 0.2,
         ease: "circOut",
       },
     },
   };
 
   return (
-    <>
+    <div>
       <button
         onClick={() => setToggled(!isToggled)}
         className="flex justify-center items-center cursor-pointer w-10 h-10 z-[51] relative"
       >
-        <MenuButton isOpen={isToggled} />
+        <MoreVertical />
       </button>
       <AnimatePresence>
         {isToggled && (
           <div
             className={cn(
-              "fixed top-0 left-0 h-screen w-screen overflow-hidden"
+              "fixed top-0 left-0 h-screen w-screen overflow-hidden  "
             )}
-          
           >
             <motion.div
-              className="bg-primary"
+              className="  backdrop-blur-3xl "
               variants={animationVariants}
               initial="hidden"
               exit="hidden"
               animate={isToggled ? "visible" : "hidden"}
-              ref={outSideClickRef}
+              key="mobile-nav"
             >
               <MobilleNavLinks
                 isToggled={isToggled}
@@ -68,7 +67,7 @@ function MobileNav() {
           </div>
         )}
       </AnimatePresence>
-    </>
+    </div>
   );
 }
 
