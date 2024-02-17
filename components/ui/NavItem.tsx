@@ -1,7 +1,7 @@
 import { usePathname } from "next/navigation";
 import React from "react";
 import NavLinks, { navLinks } from "./NavLinks";
-import { animate, motion } from "framer-motion";
+import { AnimationProps, animate, motion } from "framer-motion";
 
 type Props = {};
 
@@ -39,3 +39,4 @@ function NavItem({}: Props) {
 }
 
 export default NavItem;
+

@@ -1,59 +1,73 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import MenuButton from "./MenuButton";
-import { AnimationProps, animate, motion } from "framer-motion";
+import {
+  AnimatePresence,
+  AnimationProps,
+  animate,
+  motion,
+} from "framer-motion";
 import { cn } from "@/lib/utils";
-import useDelayedToggle from "@/hooks/useDelayedToggle";
+import { MobilleNavLinks } from "./NavLinks";
+import { useOutsideClick } from "@/hooks/useOutsideClick";
 
-type Props = {};
-
-function MobileNav({}: Props) {
-  const { isOpen, toggleOpen, isRendered, isMounted } = useDelayedToggle();
+function MobileNav() {
+  const [isToggled, setToggled] = useState(false);
+  const outSideClickRef = useOutsideClick(() => setToggled(false));
   const animationVariants: AnimationProps["variants"] = {
-    open: {
+    visible: {
       opacity: 1,
-      height: "50%",
+      height: "55%",
       width: "100%",
-      borderRadius: ["0% 80% 100% 80%", "0% 80% 80% 80%", "0% 0% 10% 10%"],
+      clipPath: "circle(95% at 50% 0%)",
       transition: {
-        duration: 0.3,
+        duration: 0.5,
         ease: "circIn",
       },
     },
-    closed: {
+    hidden: {
       opacity: 0,
-      height: 0,
-      width: 0,
-      borderRadius: ["0% 0% 10% 10%", "0% 80% 80% 80%", "0% 80% 100% 80%"],
+      height: "50%",
+      width: "100%",
+      clipPath: "circle(0% at 100% 0%)",
       transition: {
-        duration: 0.3,
+        duration: 0.5,
         ease: "circOut",
       },
     },
   };
-  const variant = isOpen ? "open" : "closed";
-  console.log(isMounted, isRendered, isOpen);
+
   return (
     <>
       <button
-        onClick={toggleOpen}
+        onClick={() => setToggled(!isToggled)}
         className="flex justify-center items-center cursor-pointer w-10 h-10 z-[51] relative"
       >
-        <MenuButton isOpen={isOpen} />
+        <MenuButton isOpen={isToggled} />
       </button>
-      {isMounted && (
-        <div
-          className={cn("fixed top-0 left-0 h-screen w-screen overflow-hidden")}
-        >
-          <motion.div
-            className="bg-primary"
-            variants={animationVariants}
-            initial="open"
-            animate={variant}
+      <AnimatePresence>
+        {isToggled && (
+          <div
+            className={cn(
+              "fixed top-0 left-0 h-screen w-screen overflow-hidden"
+            )}
+          
           >
-            Mobile navbar
-          </motion.div>
-        </div>
-      )}
+            <motion.div
+              className="bg-primary"
+              variants={animationVariants}
+              initial="hidden"
+              exit="hidden"
+              animate={isToggled ? "visible" : "hidden"}
+              ref={outSideClickRef}
+            >
+              <MobilleNavLinks
+                isToggled={isToggled}
+                onOptionClick={() => setToggled(false)}
+              />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
