@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "./button";
 import { useRouter } from "next/navigation";
+import { X } from "lucide-react";
 
 type Props = {};
 
@@ -137,6 +138,18 @@ export const MobilleNavLinks = ({
             </Button>
           </motion.li>
         ))}
+        <br />
+        <motion.li variants={navItem} className="">
+          <Button
+            className="flex h-18 rounded-full aspect-square mx-auto"
+            variant={"secondary"}
+            onClick={() => {
+              onOptionClick?.();
+            }}
+          >
+            <X />
+          </Button>
+        </motion.li>
       </motion.ul>
     </div>
   );

@@ -52,7 +52,7 @@ function MobileNav() {
             )}
           >
             <motion.div
-              className="  backdrop-blur-3xl "
+              className="  backdrop-blur-2xl "
               variants={animationVariants}
               initial="hidden"
               exit="hidden"
@@ -63,6 +63,7 @@ function MobileNav() {
                 isToggled={isToggled}
                 onOptionClick={() => setToggled(false)}
               />
+         
             </motion.div>
           </div>
         )}
