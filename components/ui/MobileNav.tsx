@@ -48,11 +48,11 @@ function MobileNav() {
         {isToggled && (
           <div
             className={cn(
-              "fixed top-0 left-0 h-screen w-screen overflow-hidden  "
+              "fixed top-0 left-0 h-screen w-full overflow-hidden  "
             )}
           >
             <motion.div
-              className="  backdrop-blur-2xl "
+              className=" backdrop-blur-2xl "
               variants={animationVariants}
               initial="hidden"
               exit="hidden"
