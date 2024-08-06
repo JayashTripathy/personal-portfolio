@@ -25,6 +25,9 @@ import IconFramer from "../icons/iconFramer";
 import IconBxlPostgresql from "../icons/iconPostgres";
 import IconReactquery from "../icons/iconReactQuery";
 import { IconWebsocket } from "../icons/iconWebSocket";
+import SectionTitle from "../ui/sectionTitle";
+import { TimelineEvent, TimelineHeader } from "../content/timeline";
+import { calculateDuration } from "../utils/calculateDuration";
 
 type Props = {};
 
@@ -176,15 +179,52 @@ function HomeSection({}: Props) {
           </AnimationContainer>
         </div>
         <AnimationContainer customClassName="space-y-8">
-          <h4 className="scroll-m-20 text-xl font-semibold tracking-tight ">
-            About Me
-          </h4>
+          <SectionTitle title="About Me" />
           <p className="leading-7 text-muted-foreground">
             I am a passionate dev with +2 years of work experience in
             JavaScript/TypeScript and React and love learning new technologies
             and since I discovered programming. I love what i do and help others
             with what i can
           </p>
+        </AnimationContainer>
+        <AnimationContainer customClassName="space-y-8">
+          <SectionTitle title="Experience" />
+          <div className="text-muted-foreground">
+            <TimelineEvent active={true} last={false}>
+              <div className="flex flex-col gap-4">
+                <TimelineHeader>
+                  Intozi{" "}
+                  <span className="text-sm opacity-55">
+                    {calculateDuration("2024-02-29")}
+                  </span>
+                </TimelineHeader>
+                <p>
+                  Created content-heavy, user-friendly dashboards while working
+                  extensively with real-time front-end technologies.
+                </p>
+                <ol className="list-disc flex flex-col pl-4">
+                  <li>
+                    Real-time video streaming by utilising eventstreams, REST
+                    APIs, and websockets.
+                  </li>
+                  <li>
+                    Worked with a team of 4 to develop and maintain the
+                    company&apos;s core products.
+                  </li>
+                  <li>
+                    Completely rewrote routing logic, which reduced error rates
+                    and increased page load times by 80%.
+                  </li>
+                  <li>
+                    Refactored the legacy code to improve project architecture
+                    and enhance the developer experience.
+                  </li>
+                </ol>
+              </div>
+            </TimelineEvent>
+            <TimelineEvent last={false}>fsduhd</TimelineEvent>
+            <TimelineEvent last={true}>fsduhd</TimelineEvent>
+          </div>
         </AnimationContainer>
       </div>
     </SectionContainer>
