@@ -180,7 +180,7 @@ function HomeSection({}: Props) {
         </div>
         <AnimationContainer customClassName="space-y-8">
           <SectionTitle title="About Me" />
-          <p className="leading-7 text-muted-foreground">
+          <p className="leading-7 text-foreground/80">
             I am a passionate dev with +2 years of work experience in
             JavaScript/TypeScript and React and love learning new technologies
             and since I discovered programming. I love what i do and help others
@@ -188,19 +188,27 @@ function HomeSection({}: Props) {
           </p>
         </AnimationContainer>
         <AnimationContainer customClassName="space-y-8">
-          <SectionTitle title="Experience" />
-          <div className="text-muted-foreground">
+          <SectionTitle title="Work Experience" />
+          <div className="text-muted-foreground ml-5">
             <TimelineEvent active={true} last={false}>
               <div className="flex flex-col gap-4">
                 <TimelineHeader>
                   Intozi{" "}
                   <span className="text-sm opacity-55">
-                    {calculateDuration("2024-02-29")}
+                    Feb. 2024 - {calculateDuration("2024-02-29")}
                   </span>
                 </TimelineHeader>
+                {/* <p className="text-foreground/80">
+                  I created user-friendly dashboards and specialized in
+                  real-time technologies, including video streaming with event
+                  streams, REST APIs, and websockets. Working with a team of
+                  four, I revamped routing logic to boost page load speed by 80%
+                  and reduced errors. I also refactored legacy code to improve
+                  project architecture and the developer experience.
+                </p> */}
                 <p>
-                  Created content-heavy, user-friendly dashboards while working
-                  extensively with real-time front-end technologies.
+                  Created content-heavy dashboards while working extensively
+                  with real-time tech
                 </p>
                 <ol className="list-disc flex flex-col pl-4">
                   <li>
@@ -222,8 +230,26 @@ function HomeSection({}: Props) {
                 </ol>
               </div>
             </TimelineEvent>
-            <TimelineEvent last={false}>fsduhd</TimelineEvent>
-            <TimelineEvent last={true}>fsduhd</TimelineEvent>
+            <TimelineEvent last={true}>
+              <div className="flex flex-col gap-4">
+                <TimelineHeader>
+                  Writeroo
+                  <span className="text-sm opacity-55">
+                    Jun. 2023 - Sep. 2023
+                  </span>
+                </TimelineHeader>
+                <p>
+                  Created the essential User interface (UI) components for
+                  implying SOLID principles. designed features, such as a
+                  feature editor and gesture controls, utilising Tailwind CSS,
+                  NextJS, Typescript, and ReactJS.
+                </p>
+                <p>
+                  Worked on the Cordava ionic framework to create a mobile
+                  application using ReactJS and Typescript.
+                </p>
+              </div>
+            </TimelineEvent>
           </div>
         </AnimationContainer>
       </div>

@@ -17,13 +17,14 @@ export const TimelineEvent = ({ active, last, children }: TimelineEventProps) =>
     <div
       className={cn("w-full flex- justify-start gap-6 border-neutral-700", {
         "border-l": !last,
+        
         "pb-16": !last,
       })}
     >
       <div className="relative">
         <div
           className={cn(
-            "absolute top-0 left-[-8.5px] w-4 h-4 rounded-full aspect-square ",
+            "absolute top-0 left-[-9px] w-4 h-4 rounded-full aspect-square ",
             {
               "bg-emerald-500": active,
               "bg-neutral-700": !active,
