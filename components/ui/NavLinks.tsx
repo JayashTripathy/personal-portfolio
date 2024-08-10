@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import React from "react";
 import { Button } from "./button";
 import { useRouter } from "next/navigation";
-import { X } from "lucide-react";
+import { Home, Newspaper, StickyNote, X } from "lucide-react";
 
 type Props = {};
 
@@ -15,40 +15,37 @@ export const navLinks: {
     x: number;
     y: number;
     w: string;
+    icon: React.ReactNode;
   };
 } = {
   "/": {
     name: "Home",
-    x: 1,
+    x: 2,
     y: -5,
-    w: "65px",
+    w: "40px",
+    icon: <Home />,
   },
-  "/about": {
-    name: "about",
-    x: 70,
+  "/notes": {
+    name: "Notes",
+    x: 45,
     y: -5,
-
-    w: "65px",
-  },
-  "/projects": {
-    name: "projects",
-    x: 135,
-    y: -5,
-
-    w: "85px",
+    w: "40px",
+    icon: <StickyNote />,
   },
   "/blog": {
     name: "blog",
-    x: 220,
+    x: 90,
     y: -5,
-    w: "58px",
+    w: "40px",
+
+    icon: <Newspaper />,
   },
 };
 function NavLinks({}: Props) {
   const pathname = usePathname() as string;
   return (
     <>
-      {Object.entries(navLinks).map(([path, { name }]) => {
+      {Object.entries(navLinks).map(([path, { name, icon }]) => {
         return (
           <Link
             key={path}
@@ -58,7 +55,7 @@ function NavLinks({}: Props) {
               path === pathname && "text-primary font-bold"
             )}
           >
-            {name}
+            {icon}
           </Link>
         );
       })}

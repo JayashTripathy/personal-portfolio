@@ -46,7 +46,6 @@ function ContactForm({}: Props) {
       </div>
     );
   };
-  console.log(state, "DCUHAISHD");
 
   return (
     <form
@@ -56,7 +55,7 @@ function ContactForm({}: Props) {
       <div className=" rounded-2xl  flex gap-5 items-center">
         {info.map((item, i) => (
           <div key={item.label} className="flex gap-1">
-            {item.icon} <Link href={item.link}>{item.label}</Link>
+            {item.icon} <Link href={item.link} target="_self">{item.label}</Link>
           </div>
         ))}
       </div>
