@@ -28,6 +28,7 @@ import { IconWebsocket } from "../icons/iconWebSocket";
 import SectionTitle from "../ui/sectionTitle";
 import { TimelineEvent, TimelineHeader } from "../content/timeline";
 import { calculateDuration } from "../utils/calculateDuration";
+import ContactForm from "./contact-form";
 
 type Props = {};
 
@@ -251,6 +252,11 @@ function HomeSection({}: Props) {
               </div>
             </TimelineEvent>
           </div>
+        </AnimationContainer>
+        <AnimationContainer customClassName="space-y-8">
+          <SectionTitle title="Contact Me" />
+
+          <ContactForm />
         </AnimationContainer>
       </div>
     </SectionContainer>

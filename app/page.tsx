@@ -1,4 +1,4 @@
-import HomeSection from "@/components/sections/HomeSection";
+import HomeSection from "@/components/sections/home";
 import { SparklesCore } from "@/components/ui/Sparkles";
 
 import React from "react";
