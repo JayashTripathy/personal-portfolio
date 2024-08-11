@@ -1,6 +1,6 @@
 "use client";
 import { useForm, ValidationError, useFormspree } from "@formspree/react";
-import React from "react";
+import React, { useEffect } from "react";
 import SectionTitle from "../ui/sectionTitle";
 import { Mail, Phone, Send, SendHorizonal } from "lucide-react";
 import Link from "next/link";
@@ -10,14 +10,17 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
-import { AnimationProps, motion } from "framer-motion";
+import { AnimatePresence, AnimationProps, motion } from "framer-motion";
 
 type Props = {};
+
+const sendMessageDefaultPosition = 65;
 
 function ContactForm({}: Props) {
   const [state, handleSubmit] = useForm("movawnak");
 
-  console.log(state.submitting);
+  const [succeeded, setSucceeded] = React.useState(false);
+  const buttonText = succeeded ? "Sent" : "Send Message";
   const info = [
     {
       icon: <Mail />,
@@ -30,6 +33,7 @@ function ContactForm({}: Props) {
       label: personalInfo.phone,
     },
   ];
+
   const LabelInputContainer = ({
     children,
     className,
@@ -45,14 +49,33 @@ function ContactForm({}: Props) {
   };
 
   const bounceAnimation = {
-    x: state.submitting ? [0, 10, 0] : state.succeeded ? 1000 : 0,
+    x: state.submitting
+      ? [
+          sendMessageDefaultPosition,
+          sendMessageDefaultPosition + 10,
+          sendMessageDefaultPosition,
+        ]
+      : succeeded
+      ? 1000
+      : sendMessageDefaultPosition,
   };
 
   const transitionValues: AnimationProps["transition"] = {
-    duration: state.succeeded ? 0.5 : 2,
-    repeat: state.submitting ? Infinity : 0,
+    duration: (!state.submitting || succeeded) ? 0.5 : 2,
+    repeat: state.submitting && !succeeded ? Infinity : 0,
     ease: "easeInOut",
   };
+
+  useEffect(() => {
+    if (state.succeeded) {
+      setTimeout(() => {
+        setSucceeded(true);
+        setTimeout(() => {
+          setSucceeded(false);
+        }, 3000);
+      }, 500);
+    }
+  }, [state.succeeded, state.submitting]);
 
   return (
     <form
@@ -109,16 +132,30 @@ function ContactForm({}: Props) {
         disabled={state.submitting}
         className="flex gap-2 justify-center items-center overflow-hidden"
       >
-        Send Message
-        <motion.span
-          initial={{ x: 0 }}
-          animate={bounceAnimation}
-          transition={{
-            x: transitionValues,
-          }}
-        >
-          <SendHorizonal size={15} />
-        </motion.span>
+        <div className="relative flex w-full justify-center items-center">
+          <AnimatePresence>
+            <motion.span
+              className="text-background absolute top-0 left-0  text-center flex justify-center items-center w-full h-full"
+              key={buttonText}
+              initial={{ y: 30 }}
+              animate={{ y: 0 }}
+              exit={{ y: -30 }}
+              transition={{ duration: 0.25, delay: .5 }}
+            >
+              {buttonText}
+            </motion.span>
+          </AnimatePresence>
+
+          <motion.span
+            initial={{ x: 30 }}
+            animate={bounceAnimation}
+            transition={{
+              x: transitionValues,
+            }}
+          >
+            <SendHorizonal size={15} />
+          </motion.span>
+        </div>
       </Button>
     </form>
   );
