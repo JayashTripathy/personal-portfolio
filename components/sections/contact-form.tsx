@@ -21,10 +21,10 @@ function ContactForm({}: Props) {
 
   const [succeeded, setSucceeded] = React.useState(false);
   const buttonText = succeeded ? (
-    <span className="flex gap-1 justify-center items-center ">
+    <span className="flex gap-1 justify-center items-center text-foreground font-bold ">
       {" "}
       Sent{" "}
-      <span className="bg-emerald-800/10 text-emerald-700 border-emerald-700 border rounded-full h-4 flex justify-center items-center  aspect-square p-[1px]">
+      <span className="bg-emerald-800/10 text-foreground  rounded-full h-4 flex justify-center items-center  aspect-square p-[1px]">
         <Check className="h-full" />
       </span>{" "}
     </span>
@@ -142,7 +142,7 @@ function ContactForm({}: Props) {
         disabled={state.submitting}
         className={cn(
           "flex gap-2 justify-center items-center overflow-hidden ",
-          succeeded && "bg-emerald-100"
+          succeeded && "bg-emerald-600"
         )}
       >
         <div className="relative flex w-full justify-center items-center transition-colors duration-200">
