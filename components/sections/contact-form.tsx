@@ -2,7 +2,7 @@
 import { useForm, ValidationError, useFormspree } from "@formspree/react";
 import React, { useEffect } from "react";
 import SectionTitle from "../ui/sectionTitle";
-import { Mail, Phone, Send, SendHorizonal } from "lucide-react";
+import { Check, Mail, Phone, Send, SendHorizonal } from "lucide-react";
 import Link from "next/link";
 import { personalInfo } from "@/constants/personal-info";
 import { Label } from "../ui/label";
@@ -20,7 +20,17 @@ function ContactForm({}: Props) {
   const [state, handleSubmit] = useForm("movawnak");
 
   const [succeeded, setSucceeded] = React.useState(false);
-  const buttonText = succeeded ? "Sent" : "Send Message";
+  const buttonText = succeeded ? (
+    <span className="flex gap-1 justify-center items-center ">
+      {" "}
+      Sent{" "}
+      <span className="bg-emerald-800/10 text-emerald-700 border-emerald-700 border rounded-full h-4 flex justify-center items-center  aspect-square p-[1px]">
+        <Check className="h-full" />
+      </span>{" "}
+    </span>
+  ) : (
+    "Send Message"
+  );
   const info = [
     {
       icon: <Mail />,
@@ -61,7 +71,7 @@ function ContactForm({}: Props) {
   };
 
   const transitionValues: AnimationProps["transition"] = {
-    duration: (!state.submitting || succeeded) ? 0.5 : 2,
+    duration: !state.submitting || succeeded ? 0.5 : 2,
     repeat: state.submitting && !succeeded ? Infinity : 0,
     ease: "easeInOut",
   };
@@ -130,17 +140,20 @@ function ContactForm({}: Props) {
       <Button
         type="submit"
         disabled={state.submitting}
-        className="flex gap-2 justify-center items-center overflow-hidden"
+        className={cn(
+          "flex gap-2 justify-center items-center overflow-hidden ",
+          succeeded && "bg-emerald-100"
+        )}
       >
-        <div className="relative flex w-full justify-center items-center">
+        <div className="relative flex w-full justify-center items-center transition-colors duration-200">
           <AnimatePresence>
             <motion.span
               className="text-background absolute top-0 left-0  text-center flex justify-center items-center w-full h-full"
-              key={buttonText}
+              key={buttonText.toString()}
               initial={{ y: 30 }}
               animate={{ y: 0 }}
               exit={{ y: -30 }}
-              transition={{ duration: 0.25, delay: .5 }}
+              transition={{ duration: 0.25, delay: 0.5 }}
             >
               {buttonText}
             </motion.span>
