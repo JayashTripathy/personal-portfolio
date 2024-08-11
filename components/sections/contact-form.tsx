@@ -1,5 +1,5 @@
 "use client";
-import { useForm, ValidationError,useFormspree } from "@formspree/react";
+import { useForm, ValidationError, useFormspree } from "@formspree/react";
 import React from "react";
 import SectionTitle from "../ui/sectionTitle";
 import { Mail, Phone, Send, SendHorizonal } from "lucide-react";
@@ -10,17 +10,14 @@ import { Input } from "../ui/input";
 import { Textarea } from "../ui/textarea";
 import { cn } from "@/lib/utils";
 import { Button } from "../ui/button";
+import { AnimationProps, motion } from "framer-motion";
 
 type Props = {};
 
 function ContactForm({}: Props) {
   const [state, handleSubmit] = useForm("movawnak");
-  if (state.succeeded) {
-    return <p>Thanks for joining!</p>;
-  }
 
-  
-
+  console.log(state.submitting);
   const info = [
     {
       icon: <Mail />,
@@ -47,6 +44,16 @@ function ContactForm({}: Props) {
     );
   };
 
+  const bounceAnimation = {
+    x: state.submitting ? [0, 10, 0] : state.succeeded ? 1000 : 0,
+  };
+
+  const transitionValues: AnimationProps["transition"] = {
+    duration: state.succeeded ? 0.5 : 2,
+    repeat: state.submitting ? Infinity : 0,
+    ease: "easeInOut",
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -55,11 +62,14 @@ function ContactForm({}: Props) {
       <div className=" rounded-2xl  flex gap-5 items-center">
         {info.map((item, i) => (
           <div key={item.label} className="flex gap-1">
-            {item.icon} <Link href={item.link} target="_self">{item.label}</Link>
+            {item.icon}{" "}
+            <Link href={item.link} target="_self">
+              {item.label}
+            </Link>
           </div>
         ))}
       </div>
-      <br/>
+      <br />
       <LabelInputContainer>
         <Label htmlFor="email">Email Address</Label>
         <Input
@@ -70,7 +80,12 @@ function ContactForm({}: Props) {
           placeholder="Type your email here..."
           required
         />
-      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-yellow-400" />
+        <ValidationError
+          prefix="Email"
+          field="email"
+          errors={state.errors}
+          className="text-yellow-400"
+        />
       </LabelInputContainer>
       <LabelInputContainer>
         <Label htmlFor="email">Message</Label>
@@ -82,10 +97,28 @@ function ContactForm({}: Props) {
           placeholder="Type your message here..."
           required
         />
-      <ValidationError prefix="Message" field="message" errors={state.errors} className="text-yellow-400"/>
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+          className="text-yellow-400"
+        />
       </LabelInputContainer>
-      <Button type="submit" disabled={state.submitting} className="flex gap-2 justify-center items-center">
-        Send Message <SendHorizonal size={15} />
+      <Button
+        type="submit"
+        disabled={state.submitting}
+        className="flex gap-2 justify-center items-center overflow-hidden"
+      >
+        Send Message
+        <motion.span
+          initial={{ x: 0 }}
+          animate={bounceAnimation}
+          transition={{
+            x: transitionValues,
+          }}
+        >
+          <SendHorizonal size={15} />
+        </motion.span>
       </Button>
     </form>
   );
