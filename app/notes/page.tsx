@@ -1,25 +1,18 @@
-import React from 'react'
-import { allNotes  } from "content-collections";
+import SectionTitle from "@/components/ui/sectionTitle";
+import SectionContainer from "@/components/utils/SectionContainer";
+import { getAllNotes } from "@/lib/services/content/notes";
+import React from "react";
 
-type Props = {}
+type Props = {};
 
-function page({}: Props) {
-
-  console.log(allNotes, "jkediawso")
+function Page({}: Props) {
+  const notes = getAllNotes();
   return (
-    <div>
-       <ul>
-      {allNotes.map((post) => (
-        <li key={post._meta.path}>
-          <a href={`/posts/${post._meta.path}`}>
-            <h3>{post.title}</h3>
-            <p>{post.summary}</p>
-          </a>
-        </li>
-      ))}
-    </ul>
-    </div>
-  )
+    <SectionContainer>
+      <SectionTitle title="Notes" className="text-left w-full text-4xl mb-1" />
+      <p className="text-sm">A collection of my personal brief notes or snippets I found while development</p>
+    </SectionContainer>
+  );
 }
 
-export default page
+export default Page;

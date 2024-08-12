@@ -1,13 +1,14 @@
+import { cn } from "@/lib/utils";
 import React, { HTMLProps } from "react";
 
 interface Props extends HTMLProps<HTMLHeadingElement> {
   title: string;
 }
 
-function SectionTitle({ title, ...props }: Props) {
+function SectionTitle({ title, className, ...props }: Props) {
   return (
     <h4
-      className="scroll-m-20 text-xl font-semibold tracking-tight "
+      className={cn("scroll-m-20 text-xl font-semibold tracking-tight", className)}
       {...props}
     >
       {title}
