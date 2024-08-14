@@ -14,7 +14,6 @@ function NavItem({}: Props) {
         <div className="hidden lg:block">
           <motion.div
             className="absolute bg-secondary h-10 rounded-lg z-[-1]"
-            layoutId="nav-item"
             initial={{
               opacity: 0,
               x: navLinks[pathname].x,
