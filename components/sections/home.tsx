@@ -111,7 +111,7 @@ function HomeSection({}: Props) {
   return (
     <SectionContainer>
       <div className=" space-y-20">
-        <div className=" mx-auto relative flex h-full w-full   items-center justify-center overflow-hidden rounded-3xl border bg-background p-8 md:shadow-xl">
+        <div className=" mx-auto relative flex flex-col gap-8 h-full w-full   items-center justify-center overflow-hidden rounded-3xl border bg-background p-8 md:shadow-xl">
           <RetroGrid />
 
           <AnimationContainer customClassName="w-full md:flex justify-between">
@@ -164,7 +164,7 @@ function HomeSection({}: Props) {
               </div>
             </div> */}
 
-            <div className="grid grid-cols-4 grid-rows-3 grid-flow-row gap-3 p-1   h-28 relative">
+            {/* <div className="grid grid-cols-4 grid-rows-3 grid-flow-row gap-3 p-1   h-28 relative">
               <Badge
                 className="absolute top-11 text-xs font-bold  -left-[calc(50%)]  -rotate-90  "
                 variant={"outline"}
@@ -176,18 +176,17 @@ function HomeSection({}: Props) {
                   <FlexiIcon>{icon.icon}</FlexiIcon>
                 </div>
               ))}
-            </div>
+            </div> */}
+          </AnimationContainer>
+          <AnimationContainer customClassName="space-y-8">
+            <p className="leading-7 text-foreground/80">
+              I&apos;m a seasoned Javascript / Typescript developer with an appetite for tinkering
+              and an affection of design. My playground is web development,
+              where I push boundaries and explore new avenues.
+            </p>
           </AnimationContainer>
         </div>
-        <AnimationContainer customClassName="space-y-8">
-          <SectionTitle title="About Me" />
-          <p className="leading-7 text-foreground/80">
-            I am a passionate dev with +2 years of work experience in
-            JavaScript/TypeScript and React and love learning new technologies
-            and since I discovered programming. I love what i do and help others
-            with what i can
-          </p>
-        </AnimationContainer>
+
         <AnimationContainer customClassName="space-y-8">
           <SectionTitle title="Work Experience" />
           <div className="text-muted-foreground ml-5">
