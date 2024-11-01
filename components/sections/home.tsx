@@ -29,6 +29,7 @@ import SectionTitle from "../ui/sectionTitle";
 import { TimelineEvent, TimelineHeader } from "../content/timeline";
 import { calculateDuration } from "../utils/calculateDuration";
 import ContactForm from "./contact-form";
+import SSHResumeCopyBlock from "../ui/ssh-resume-copy-block";
 
 type Props = {};
 
@@ -142,7 +143,7 @@ function HomeSection({}: Props) {
                 </h1>
                 <AnimateSlideDown>
                   <h2 className=" text-sm md:text-md text-muted-foreground  w-full">
-                    JavaScript Developer
+                    Software Developer
                   </h2>
                 </AnimateSlideDown>
 
@@ -185,6 +186,7 @@ function HomeSection({}: Props) {
               where I push boundaries and explore new avenues.
             </p>
           </AnimationContainer>
+          <SSHResumeCopyBlock />
         </div>
 
         <AnimationContainer customClassName="space-y-8">

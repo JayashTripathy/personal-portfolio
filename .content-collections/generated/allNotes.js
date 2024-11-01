@@ -1,6 +1,6 @@
 export default [
   {
-    "content": "# Hello world\r\n \r\nThis is my first post!\r\n... rest of the content",
+    "content": "# Hello world\n \nThis is my first post!\n... rest of the content",
     "title": "Hello world",
     "summary": "This is my first post!",
     "_meta": {

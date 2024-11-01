@@ -9,6 +9,8 @@ const notes = defineCollection({
     summary: z.string(),
   }),
 });
+
+// const snippets = defineCollection
  
 export default defineConfig({
   collections: [notes],
