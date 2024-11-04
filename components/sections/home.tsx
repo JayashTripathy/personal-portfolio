@@ -1,35 +1,21 @@
-import React from "react";
-import { SparklesCore } from "../ui/Sparkles";
-import SectionContainer from "../utils/SectionContainer";
-import AnimationContainer from "../utils/AnimationContainer";
-import AnimateSlideDown from "../utils/AnimatedTitle";
-import { AnimatedTooltip } from "../ui/AnimatedTooltip";
-import { Framer } from "lucide-react";
 import Image from "next/image";
-import IconReact from "../icons/icon-react";
-import IconTypescript from "../icons/icon-typescript";
-import IconCloud from "../ui/iconCloud";
-import RetroGrid from "../ui/retroGrid";
-import IconGithub from "../icons/icon-github";
-import IconLinkedin from "../icons/icon-linkedin";
-import IconTwitter from "../icons/icon-twitter";
 import Link from "next/link";
-import IconNextdotjs from "../icons/icon-next";
-import IconPrisma from "../icons/icon-prisma";
-import IconBxlAws from "../icons/icon-aws";
-import IconExpress from "../icons/icon-express";
-import { Badge } from "@/components/ui/badge";
-import IconLogoNodejs from "../icons/icon-node";
-import IconTailwind from "../icons/icon-tailwind";
-import IconFramer from "../icons/icon-framer";
-import IconBxlPostgresql from "../icons/icon-postgres";
-import IconReactquery from "../icons/icon-react-query";
-import { IconWebsocket } from "../icons/icon-web-socket";
-import SectionTitle from "../ui/sectionTitle";
+import React from "react";
 import { TimelineEvent, TimelineHeader } from "../content/timeline";
-import { calculateDuration } from "../utils/calculateDuration";
-import ContactForm from "./contact-form";
+import IconGithub from "../../assets/icons/icon-github";
+import IconLinkedin from "../../assets/icons/icon-linkedin";
+import IconTwitter from "../../assets/icons/icon-twitter";
+import RetroGrid from "../ui/retroGrid";
+import SectionTitle from "../ui/sectionTitle";
+import { SparklesCore } from "../ui/Sparkles";
 import SSHResumeCopyBlock from "../ui/ssh-resume-copy-block";
+import AnimateSlideDown from "../utils/AnimatedTitle";
+import AnimationContainer from "../utils/AnimationContainer";
+import { calculateDuration } from "../utils/calculateDuration";
+import SectionContainer from "../utils/SectionContainer";
+import ContactForm from "./contact-form";
+import Projects from "./projects";
+import { projects } from "@/config/me";
 
 type Props = {};
 
@@ -57,58 +43,8 @@ const FlexiIcon = ({ children }: { children: React.ReactElement }) =>
     width: "100%",
   });
 
-const topTech = [
-  {
-    name: "TypeScript",
-    icon: <IconTypescript />,
-  },
-  {
-    name: "React JS",
-    icon: <IconReact />,
-  },
-  {
-    name: "Next JS",
-    icon: <IconNextdotjs />,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: <IconTailwind />,
-  },
-  {
-    name: "Framer Motion",
-    icon: <IconFramer />,
-  },
-  {
-    name: "Prisma",
-    icon: <IconPrisma />,
-  },
-  {
-    name: "AWS",
-    icon: <IconBxlAws />,
-  },
-  {
-    name: "Express",
-    icon: <IconExpress />,
-  },
-  {
-    name: "Node JS",
-    icon: <IconLogoNodejs />,
-  },
-  {
-    name: "Postgres",
-    icon: <IconBxlPostgresql />,
-  },
-  {
-    name: "React Query",
-    icon: <IconReactquery />,
-  },
-  {
-    name: "Web Socket",
-    icon: <IconWebsocket />,
-  },
-];
 
-function HomeSection({}: Props) {
+function HomeSection({ }: Props) {
   return (
     <SectionContainer>
       <div className=" space-y-20">
@@ -253,6 +189,11 @@ function HomeSection({}: Props) {
               </div>
             </TimelineEvent>
           </div>
+        </AnimationContainer>
+
+        <AnimationContainer customClassName="space-y-8">
+          <SectionTitle title="Projects" />
+          <Projects projects={projects} />
         </AnimationContainer>
         <AnimationContainer customClassName="space-y-8">
           <SectionTitle title="Contact Me" />

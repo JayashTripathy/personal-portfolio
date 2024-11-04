@@ -3,3 +3,4 @@ export interface AnimationContainerProps {
   customClassName?: string;
   customDelay?: number;
 }
+
