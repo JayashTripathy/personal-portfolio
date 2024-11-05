@@ -115,7 +115,7 @@ function HomeSection({ }: Props) {
               ))}
             </div> */}
           </AnimationContainer>
-          <AnimationContainer customClassName="space-y-8">
+          <AnimationContainer customClassName="flex flex-col gap-4">
             <p className="leading-7 text-foreground/80">
               I&apos;m a seasoned Javascript / Typescript developer with an appetite for tinkering
               and an affection of design. My playground is web development,
@@ -125,7 +125,7 @@ function HomeSection({ }: Props) {
           <SSHResumeCopyBlock />
         </div>
 
-        <AnimationContainer customClassName="space-y-8">
+        <AnimationContainer customClassName="flex flex-col gap-4">
           <SectionTitle title="Work Experience" />
           <div className="text-muted-foreground ml-5">
             <TimelineEvent active={true} last={false}>
@@ -191,11 +191,11 @@ function HomeSection({ }: Props) {
           </div>
         </AnimationContainer>
 
-        <AnimationContainer customClassName="space-y-8">
+        <AnimationContainer customClassName="flex flex-col gap-4">
           <SectionTitle title="Projects" />
           <Projects projects={projects} />
         </AnimationContainer>
-        <AnimationContainer customClassName="space-y-8">
+        <AnimationContainer customClassName="flex flex-col gap-4">
           <SectionTitle title="Contact Me" />
 
           <ContactForm />
