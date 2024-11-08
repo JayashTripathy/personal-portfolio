@@ -71,7 +71,7 @@ export const topTech = [
 export const projects: Project[] = [
     {
         title: "SSH Resume",
-        description: "Resume served in the terminal over SSH",
+        description: "An SSH-based terminal profile viewer built with Go and Charmbracelet CLI. Connect remotely for an interactive, elegantly rendered profile experience directly in the terminal.",
         url: "https://github.com/JayashTripathy/terminal-resume",
         techStack: ["golang"],
     }

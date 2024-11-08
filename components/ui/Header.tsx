@@ -11,7 +11,7 @@ type Props = {};
 function Header({ }: Props) {
   return (
     <HeaderAnimation>
-      <nav className=" lg:max-w-screen-md w-full flex items-center  justify-between relative  md:py-8 py-4 px-2 sm:px-0 sm:pb-8 bg-opacity-60 text-secondary-foreground gap-5 lg:gap-0  ">
+      <nav className=" lg:max-w-screen-md w-full flex items-center  justify-between relative  md:py-8 py-4 px-4 sm:pb-8 bg-opacity-60 text-secondary-foreground gap-5 lg:gap-0  ">
         <Link href="/">
           Jayash Tripathy
         </Link>
