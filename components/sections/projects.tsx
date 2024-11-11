@@ -52,7 +52,7 @@ const Projects = ({ projects }: Props) => {
                         exit={{ opacity: 0 }}
                     >
                         <motion.div
-                            className="p-8 border bg-card rounded-2xl w-full max-w-3xl relative flex flex-col gap-3 overflow-hidden "
+                            className="p-8 border bg-card rounded-2xl w-full max-w-3xl relative flex flex-col gap-6 overflow-hidden "
                             layoutId={`project-${id}-${active.title}`}
                             ref={ref}
                         >
@@ -75,7 +75,7 @@ const Projects = ({ projects }: Props) => {
 
 
 
-                            <motion.div className='flex gap-2' layoutId={`tech-stack-${id}`}>
+                            <motion.div className='flex gap-2' layoutId={`tech-stack-${active.title}-${id}`}>
                                 {active.techStack.slice(0, 3).map(tech => techIcons[tech].icon({ key: tech, className: 'w-10 h-10' }))}
                                 {active.techStack.length > 3 && (
                                     <div className='w-5 h-5 text-emerald-400' >...</div>
@@ -106,7 +106,7 @@ const Projects = ({ projects }: Props) => {
                                     {project.title}
                                 </motion.h3>
 
-                                <motion.div className='flex gap-1' layoutId={`tech-stack-${id}`}>
+                                <motion.div className='flex gap-1' layoutId={`tech-stack-${project.title}-${id}`}>
                                     {project.techStack.slice(0, 3).map(tech => techIcons[tech].icon({ key: tech, className: 'w-5 h-5' }))}
                                     {project.techStack.length > 3 && (
                                         <div className='w-5 h-5 text-emerald-400' >...</div>

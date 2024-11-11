@@ -65,14 +65,26 @@ export const topTech = [
         name: "Web Socket",
         icon: IconWebsocket,
     },
+    {
+        name: "Node JS",
+        icon: IconLogoNodejs
+    }
 ];
 
 
 export const projects: Project[] = [
-    {
-        title: "SSH Resume",
-        description: "An SSH-based terminal profile viewer built with Go and Charmbracelet CLI. Connect remotely for an interactive, elegantly rendered profile experience directly in the terminal.",
-        url: "https://github.com/JayashTripathy/terminal-resume",
-        techStack: ["golang"],
-    }
-]
+  {
+    title: "SSH Resume",
+    description:
+      "An SSH-based terminal profile viewer built with Go and Charmbracelet CLI. Connect remotely for an interactive, elegantly rendered profile experience directly in the terminal.",
+    url: "https://github.com/JayashTripathy/terminal-resume",
+    techStack: ["golang"],
+  },
+  {
+    title: "Pretty Count",
+    description:
+      "Javascript library to format numbers in a pretty human readable format",
+    url: "https://prettycount.jayash.space/",
+    techStack: ["typescript", "nodejs","npm" ],
+  },
+];
