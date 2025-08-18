@@ -63,8 +63,8 @@ function ContactForm() {
           sendMessageDefaultPosition,
         ]
       : succeeded
-      ? 1000
-      : sendMessageDefaultPosition,
+        ? 1000
+        : sendMessageDefaultPosition,
   };
 
   const transitionValues: AnimationProps["transition"] = {
