@@ -4,9 +4,10 @@
 	"private": true,
 	"scripts": {
 		"dev": "next dev",
-		"build": "next build",
+		"build": "biome check ./src && next build",
 		"start": "next start",
-		"lint": "next lint"
+		"lint": "biome check ./src ",
+		"lint:fix": "biome check ./src --write"
 	},
 	"dependencies": {
 		"@formspree/react": "^2.5.1",

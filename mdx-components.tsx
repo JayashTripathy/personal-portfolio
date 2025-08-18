@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types";
-import { Code } from "@/components/code";
+import { Code } from "@/src/components/code";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
