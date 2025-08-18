@@ -4,7 +4,7 @@ export const workExperience: WorkExperience[] = [
   {
     company: "Intozi",
     startDate: "Feb. 2024",
-    endDate: "2024-02-29",
+    endDate: "Present",
     description:
       "Created content-heavy dashboards while working extensively with real-time tech",
     bulletPoints: [

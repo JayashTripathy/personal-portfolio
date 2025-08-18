@@ -11,7 +11,7 @@ export function WorkExperienceEntry({
   isActive = false,
   isLast = false,
 }: WorkExperience) {
-  const duration = endDate ? calculateDuration(endDate) : "Present";
+  // const duration = endDate ? calculateDuration(endDate) : "Present";
 
   return (
     <TimelineEvent active={isActive} last={isLast}>
@@ -19,7 +19,7 @@ export function WorkExperienceEntry({
         <TimelineHeader>
           {company}{" "}
           <span className="text-sm opacity-55">
-            {startDate} - {duration}
+            {startDate} - {endDate}
           </span>
         </TimelineHeader>
         <p>{description}</p>
