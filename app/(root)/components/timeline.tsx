@@ -1,5 +1,5 @@
 import React from "react";
-import AnimationContainer from "../utils/AnimationContainer";
+import AnimationContainer from "../../../components/utils/AnimationContainer";
 import { cn } from "@/lib/utils";
 
 type Props = {};
@@ -9,10 +9,11 @@ type TimelineEventProps = {
   children: React.ReactNode;
 };
 
-
-
-
-export const TimelineEvent = ({ active, last, children }: TimelineEventProps) => {
+export const TimelineEvent = ({
+  active,
+  last,
+  children,
+}: TimelineEventProps) => {
   return (
     <div
       className={cn("w-full flex- justify-start gap-6 border-neutral-700", {
@@ -40,15 +41,18 @@ export const TimelineEvent = ({ active, last, children }: TimelineEventProps) =>
             />
           )}
         </div>
-        <div className='-translate-y-1 flex flex-col gap-2 pl-6 '>{children}</div>
+        <div className="-translate-y-1 flex flex-col gap-2 pl-6 ">
+          {children}
+        </div>
       </div>
     </div>
   );
 };
 
-
 export const TimelineHeader = ({ children }: { children: React.ReactNode }) => {
-    return <h3 className="text-lg font-semibold text-muted-foreground flex  gap-2 items-center">{children}</h3>;
-}
-
-
+  return (
+    <h3 className="text-lg font-semibold text-muted-foreground flex  gap-2 items-center">
+      {children}
+    </h3>
+  );
+};

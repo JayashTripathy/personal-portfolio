@@ -1,15 +1,14 @@
 "use client";
 import { useForm, ValidationError, useFormspree } from "@formspree/react";
 import React, { useEffect } from "react";
-import SectionTitle from "../ui/sectionTitle";
 import { Check, Mail, Phone, Send, SendHorizonal } from "lucide-react";
 import Link from "next/link";
 import { personalInfo } from "@/constants/personal-info";
-import { Label } from "../ui/label";
-import { Input } from "../ui/input";
-import { Textarea } from "../ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { cn } from "@/lib/utils";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
 import { AnimatePresence, AnimationProps, motion } from "framer-motion";
 
 type Props = {};

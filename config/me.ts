@@ -17,60 +17,59 @@ import IconReactquery from "@/assets/icons/icon-react-query";
 import { IconWebsocket } from "@/assets/icons/icon-web-socket";
 import { Project } from "@/types/project";
 export const topTech = [
-    {
-        name: "TypeScript",
-        icon: IconTypescript,
-    },
-    {
-        name: "React JS",
-        icon: IconReact,
-    },
-    {
-        name: "Next JS",
-        icon: IconNextdotjs,
-    },
-    {
-        name: "Tailwind CSS",
-        icon: IconTailwind,
-    },
-    {
-        name: "Framer Motion",
-        icon: IconFramer,
-    },
-    {
-        name: "Prisma",
-        icon: IconPrisma,
-    },
-    {
-        name: "AWS",
-        icon: IconBxlAws,
-    },
-    {
-        name: "Express",
-        icon: IconExpress,
-    },
-    {
-        name: "Node JS",
-        icon: IconLogoNodejs,
-    },
-    {
-        name: "Postgres",
-        icon: IconBxlPostgresql,
-    },
-    {
-        name: "React Query",
-        icon: IconReactquery,
-    },
-    {
-        name: "Web Socket",
-        icon: IconWebsocket,
-    },
-    {
-        name: "Node JS",
-        icon: IconLogoNodejs
-    }
+  {
+    name: "TypeScript",
+    icon: IconTypescript,
+  },
+  {
+    name: "React JS",
+    icon: IconReact,
+  },
+  {
+    name: "Next JS",
+    icon: IconNextdotjs,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: IconTailwind,
+  },
+  {
+    name: "Framer Motion",
+    icon: IconFramer,
+  },
+  {
+    name: "Prisma",
+    icon: IconPrisma,
+  },
+  {
+    name: "AWS",
+    icon: IconBxlAws,
+  },
+  {
+    name: "Express",
+    icon: IconExpress,
+  },
+  {
+    name: "Node JS",
+    icon: IconLogoNodejs,
+  },
+  {
+    name: "Postgres",
+    icon: IconBxlPostgresql,
+  },
+  {
+    name: "React Query",
+    icon: IconReactquery,
+  },
+  {
+    name: "Web Socket",
+    icon: IconWebsocket,
+  },
+  {
+    name: "Node JS",
+    icon: IconLogoNodejs,
+  },
 ];
-
 
 export const projects: Project[] = [
   {
@@ -85,6 +84,6 @@ export const projects: Project[] = [
     description:
       "Javascript library to format numbers in a pretty human readable format",
     url: "https://prettycount.jayash.space/",
-    techStack: ["typescript", "nodejs","npm" ],
+    techStack: ["typescript", "nodejs", "npm"],
   },
 ];

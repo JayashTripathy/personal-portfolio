@@ -1,4 +1,4 @@
-import HomeSection from "@/components/sections/home";
+import HomeSection from "@/app/(root)/components/home";
 
 import React from "react";
 
