@@ -25,7 +25,9 @@ function HeaderAnimation({ children }: { children: React.ReactNode }) {
       animate={animation.show}
       transition={{ delay: 0.5 }}
       className={cn(
-        scrollPosition > 0 ? "backdrop-blur-md bg-background/30" : "bg-transparent",
+        scrollPosition > 0
+          ? "backdrop-blur-md bg-background/30"
+          : "bg-transparent",
         "w-full sticky top-0 flex flex-col justify-center items-center z-10 transition ease-in-out mx-auto"
       )}
     >

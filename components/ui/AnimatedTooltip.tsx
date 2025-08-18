@@ -55,7 +55,11 @@ export const AnimatedTooltip = ({
           <AnimatePresence mode="wait">
             {hoveredIndex === item.id && (
               <motion.div
-                initial={{ opacity: 0, y: 20, scale: 0.6 }}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                  scale: 0.6,
+                }}
                 animate={{
                   opacity: 1,
                   y: 0,
@@ -66,7 +70,11 @@ export const AnimatedTooltip = ({
                     damping: 10,
                   },
                 }}
-                exit={{ opacity: 0, y: 20, scale: 0.6 }}
+                exit={{
+                  opacity: 0,
+                  y: 20,
+                  scale: 0.6,
+                }}
                 style={{
                   translateX: translateX,
                   rotate: rotate,
@@ -90,7 +98,13 @@ export const AnimatedTooltip = ({
               onMouseMove={handleMouseMove}
               className=" !m-0 !p-0 object-top rounded-full h-14 w-14 border-2 group-hover:scale-105 group-hover:z-30 border-secondary  relative transition duration-500 flex  justify-center items-center bg-gradient-to-r bg-primary shadow-xl"
             >
-              <div style={{ pointerEvents: "none" }}>{item.icon}</div>
+              <div
+                style={{
+                  pointerEvents: "none",
+                }}
+              >
+                {item.icon}
+              </div>
             </div>
           )}
           {item.image && (

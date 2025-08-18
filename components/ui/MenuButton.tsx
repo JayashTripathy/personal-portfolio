@@ -1,7 +1,6 @@
 import React from "react";
 import { motion, Transition, SVGMotionProps } from "framer-motion";
 
-
 interface Props extends SVGMotionProps<SVGElement> {
   isOpen?: boolean;
   color?: string;

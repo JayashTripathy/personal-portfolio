@@ -45,9 +45,15 @@ const Projects = ({ projects }: Props) => {
         {active && typeof active === "object" && (
           <motion.div
             className="fixed inset-0 grid place-items-center z-[100] backdrop-blur  "
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+            initial={{
+              opacity: 0,
+            }}
+            animate={{
+              opacity: 1,
+            }}
+            exit={{
+              opacity: 0,
+            }}
           >
             <motion.div
               className="p-8 border bg-card rounded-2xl w-full max-w-3xl relative flex flex-col gap-6 overflow-hidden "
@@ -74,11 +80,12 @@ const Projects = ({ projects }: Props) => {
                 className="flex gap-2"
                 layoutId={`tech-stack-${active.title}-${id}`}
               >
-                {active.techStack
-                  .slice(0, 3)
-                  .map((tech) =>
-                    techIcons[tech].icon({ key: tech, className: "w-10 h-10" })
-                  )}
+                {active.techStack.slice(0, 3).map((tech) =>
+                  techIcons[tech].icon({
+                    key: tech,
+                    className: "w-10 h-10",
+                  })
+                )}
                 {active.techStack.length > 3 && (
                   <div className="w-5 h-5 text-emerald-400">...</div>
                 )}
@@ -116,11 +123,12 @@ const Projects = ({ projects }: Props) => {
                   className="flex gap-1"
                   layoutId={`tech-stack-${project.title}-${id}`}
                 >
-                  {project.techStack
-                    .slice(0, 3)
-                    .map((tech) =>
-                      techIcons[tech].icon({ key: tech, className: "w-5 h-5" })
-                    )}
+                  {project.techStack.slice(0, 3).map((tech) =>
+                    techIcons[tech].icon({
+                      key: tech,
+                      className: "w-5 h-5",
+                    })
+                  )}
                   {project.techStack.length > 3 && (
                     <div className="w-5 h-5 text-emerald-400">...</div>
                   )}

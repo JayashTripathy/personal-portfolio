@@ -1,3 +1,3 @@
-import { allNotes } from "content-collections"
+import { allNotes } from "content-collections";
 
-export const getAllNotes = () => allNotes
+export const getAllNotes = () => allNotes;

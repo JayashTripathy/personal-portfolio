@@ -65,8 +65,8 @@ function ContactForm({}: Props) {
           sendMessageDefaultPosition,
         ]
       : succeeded
-      ? 1000
-      : sendMessageDefaultPosition,
+        ? 1000
+        : sendMessageDefaultPosition,
   };
 
   const transitionValues: AnimationProps["transition"] = {
@@ -149,10 +149,19 @@ function ContactForm({}: Props) {
             <motion.span
               className="text-background absolute top-0 left-0  text-center flex justify-center items-center w-full h-full"
               key={buttonText.toString()}
-              initial={{ y: 30 }}
-              animate={{ y: 0 }}
-              exit={{ y: -30 }}
-              transition={{ duration: 0.25, delay: 0.5 }}
+              initial={{
+                y: 30,
+              }}
+              animate={{
+                y: 0,
+              }}
+              exit={{
+                y: -30,
+              }}
+              transition={{
+                duration: 0.25,
+                delay: 0.5,
+              }}
             >
               {buttonText}
             </motion.span>

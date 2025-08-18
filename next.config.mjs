@@ -1,5 +1,5 @@
-import { remarkCodeHike, recmaCodeHike } from "codehike/mdx"
-import createMDX from "@next/mdx"
+import { remarkCodeHike, recmaCodeHike } from "codehike/mdx";
+import createMDX from "@next/mdx";
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -14,12 +14,12 @@ const nextConfig = {
       },
     ],
   },
-}
+};
 
 /** @type {import('codehike/mdx').CodeHikeConfig} */
 const chConfig = {
   components: { code: "Code" },
-}
+};
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
@@ -28,7 +28,7 @@ const withMDX = createMDX({
     recmaPlugins: [[recmaCodeHike, chConfig]],
     jsx: true,
   },
-})
+});
 
 // Merge MDX config with Next.js config
-export default withMDX(nextConfig)
+export default withMDX(nextConfig);

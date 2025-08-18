@@ -30,7 +30,10 @@ function Page({}: Props) {
 
       <div className="grid grid-cols-2 gap-4 w-full">
         {notes.map((note) => (
-          <div key={note.title} className="border p-4 bg-muted rounded-3xl flex flex-col gap-2 ">
+          <div
+            key={note.title}
+            className="border p-4 bg-muted rounded-3xl flex flex-col gap-2 "
+          >
             <h3 className="text-xl font-semibold">{note.title}</h3>
             <p className="text-sm text-foreground">{note.summary}</p>
           </div>

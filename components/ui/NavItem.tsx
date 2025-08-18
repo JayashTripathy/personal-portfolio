@@ -38,4 +38,3 @@ function NavItem({}: Props) {
 }
 
 export default NavItem;
-

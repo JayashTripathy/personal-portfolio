@@ -6,12 +6,10 @@ var notes = defineCollection({
   include: "**/*.md",
   schema: (z) => ({
     title: z.string(),
-    summary: z.string()
-  })
+    summary: z.string(),
+  }),
 });
 var content_collections_default = defineConfig({
-  collections: [notes]
+  collections: [notes],
 });
-export {
-  content_collections_default as default
-};
+export { content_collections_default as default };

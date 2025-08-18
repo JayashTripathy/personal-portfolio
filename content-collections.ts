@@ -1,5 +1,5 @@
 import { defineCollection, defineConfig } from "@content-collections/core";
- 
+
 const notes = defineCollection({
   name: "notes",
   directory: "content/notes",
@@ -11,7 +11,7 @@ const notes = defineCollection({
 });
 
 // const snippets = defineCollection
- 
+
 export default defineConfig({
   collections: [notes],
 });

@@ -63,7 +63,6 @@ function MobileNav() {
                 isToggled={isToggled}
                 onOptionClick={() => setToggled(false)}
               />
-         
             </motion.div>
           </div>
         )}
