@@ -18,18 +18,18 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     description: (
       <span>
         <span className="text-foreground font-medium">
-          As a Software Engineer at Intozi
+          As a Software Engineer at Plane
         </span>
-        , I worked on computer vision surveillance systems, building
-        high-performance infrastructure for realtime video intelligence.I
-        developed a TypeScript based image and video annotation SDK for ML
-        inference workflows and built Golang microservices for realtime media
-        streaming, including a lossless RTSP streaming service that reduced
-        frame latency by ~98% and improved frame quality by ~90%. I also
-        engineered an RTSP recording pipeline that converts live streams into
-        HLS (M3U8), supports optional FFmpeg compression, and stores recordings
-        for reliable playback, focusing on performance, scalability, and
-        realworld reliability.
+        , I worked on building core platform features such as analytics for data
+        visualization, interactive dashboards for custom insights, and rich
+        filtering systems for fine-grained data exploration. Migrated the entire
+        codebase from Next.js to Vite and upgraded Tailwind CSS from v3 to v4,
+        significantly improving build performance and developer experience.
+        Additionally, I built and extended the CMS backend for the website using
+        Payload CMS, integrated with MongoDB and created custom
+        UI blocks tightly aligned with the CMS schema. This significantly
+        reduced developer overhead for the marketing team and enabled them to
+        publish pages within minutes using reusable content blocks.
       </span>
     ),
     isCurrent: false,
@@ -39,7 +39,7 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   {
     company: "Intozi",
     startDate: "Feb. 2024",
-    endDate: "March.2025",
+    endDate: "March. 2025",
     description: (
       <span>
         <span className="text-foreground font-medium">
