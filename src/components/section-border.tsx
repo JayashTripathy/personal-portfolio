@@ -5,7 +5,7 @@ type SectionBorderProps = {
 export default function SectionBorder({ className = "" }: SectionBorderProps) {
   return (
     <div
-      className={`border-b border-dotted border-border ${className}`}
+      className={`border-b border-dashed border-dashed-2 border-border ${className}`}
     />
   );
 }

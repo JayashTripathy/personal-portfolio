@@ -13,7 +13,10 @@ export default function ContentParagraph({
 }: ContentParagraphProps) {
   return (
     <p
-      className={clsx("text-base leading-relaxed text-muted-foreground", className)}
+      className={clsx(
+        "text-base leading-relaxed text-foreground/70 font-medium",
+        className
+      )}
       style={{ letterSpacing: "-0.02em" }}
     >
       {children}

@@ -26,13 +26,13 @@ const ProfileHeader = ({
         width={"250"}
         height={"250"}
         alt="Jayash Tripathy"
-        className=" size-26 bg-secondary  rounded-3xl grayscale"
+        className=" size-26 bg-secondary rounded-full"
       ></img>
       <div className="flex flex-col gap-2">
         <h1 className="inline-block tracking-tighter sm:text-4xl xl:text-5xl/none font-bold font-space-grotesk">
           Jayash Tripathy
         </h1>
-        <p className="opacity-40 text-md">Software Engineer • Problem Solver</p>
+        <p className="opacity-40 text-md">Developer • Engineer • Builder</p>
         <div className="flex justify-start space-x-4 mt-3 sm:mt-0 px-0">
           {socialLinks.github && (
             <a

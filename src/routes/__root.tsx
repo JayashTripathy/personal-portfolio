@@ -48,7 +48,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <HeadContent />
       </head>
       <body>
-        <div className="min-h-screen">
+        <div className="min-h-screen bg-background text-foreground">
           {children}
           <TanStackDevtools
             config={{
