@@ -1,9 +1,7 @@
 import CallToAction from "@/components/call-to-action";
-import GitHubContributionsHeatmap from "@/components/home/github-contribution-heatmap";
 import ProfessionalExperience from "@/components/home/professional-experience";
 import ProfileDescription from "@/components/home/profile-description";
 import ProfileHeader from "@/components/home/profile-header";
-import OpenSourceContributions from "@/components/opensource-contributions";
 import { Reveal } from "@/components/reveal";
 import SectionBorder from "@/components/section-border";
 import { Spotlight } from "@/components/ui/spotlight";
@@ -17,8 +15,6 @@ function App() {
     <ProfileHeader />,
     <ProfileDescription />,
     <ProfessionalExperience experiences={WORK_EXPERIENCE} />,
-    <GitHubContributionsHeatmap username="JayashTripathy" />,
-    <OpenSourceContributions />,
     <CallToAction/>
   ];
 

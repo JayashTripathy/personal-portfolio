@@ -10,26 +10,106 @@ export type WorkExperience = {
   logo: string;
 };
 
+const INTOZI_LOGO =
+  "https://intozi.io/wp-content/uploads/2023/10/cropped-cropped-cropped-logo_icon-removebg-preview-192x192.png";
+
 export const WORK_EXPERIENCE: WorkExperience[] = [
   {
-    company: "Plane",
-    startDate: "March. 2025",
+    company: "Intozi",
+    startDate: "Apr 2026",
     endDate: "Present",
+    description: (
+      <span>
+        <span className="text-foreground font-medium">
+          Back at Intozi as a Software Development Engineer
+        </span>
+        , I work on vision AI and VLM-powered systems end to end: the pipelines
+        that run the models, the evaluation that checks what they produce, and
+        the product features built on top of them.
+        <span className="mt-3 flex flex-col gap-1.5">
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Designed the new infrastructure for Intozi&apos;s vision
+              pipeline, bringing{" "}
+              <span className="text-foreground font-medium">
+                130 analytics applications
+              </span>{" "}
+              into a single repository on shared infrastructure and
+              significantly cutting development time.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Built vision pipelines for a wide range of use cases, including
+              camera-tampering detection, PPE detection and vehicle analytics.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Worked extensively with modern NVIDIA GPUs, including the L4
+              and RTX PRO 4500 Blackwell, on large-scale video decoding,
+              processing and analytics, with pipelines running across up
+              to{" "}
+              <span className="text-foreground font-medium">300 cameras</span>.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Built an NGINX video-on-demand service that cut CPU load by{" "}
+              <span className="text-foreground font-medium">~90%</span>. It is
+              now the default video layer in every product deployment.
+            </span>
+          </span>
+        </span>
+      </span>
+    ),
+    isCurrent: true,
+    link: "https://intozi.io/",
+    logo: INTOZI_LOGO,
+  },
+  {
+    company: "Plane",
+    startDate: "Mar 2025",
+    endDate: "Mar 2026",
     description: (
       <span>
         <span className="text-foreground font-medium">
           As a Software Engineer at Plane
         </span>
-        , I worked on building core platform features such as analytics for data
-        visualization, interactive dashboards for custom insights, and rich
-        filtering systems for fine-grained data exploration. Migrated the entire
-        codebase from Next.js to Vite and upgraded Tailwind CSS from v3 to v4,
-        significantly improving build performance and developer experience.
-        Additionally, I built and extended the CMS backend for the website using
-        Payload CMS, integrated with MongoDB and created custom
-        UI blocks tightly aligned with the CMS schema. This significantly
-        reduced developer overhead for the marketing team and enabled them to
-        publish pages within minutes using reusable content blocks.
+        , I built core features of the product and its marketing website.
+        <span className="mt-3 flex flex-col gap-1.5">
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Built analytics for data visualization, custom dashboards and
+              rich filtering for fine-grained data exploration.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Migrated the codebase from{" "}
+              <span className="text-foreground font-medium">
+                Next.js to Vite
+              </span>{" "}
+              and Tailwind CSS from{" "}
+              <span className="text-foreground font-medium">v3 to v4</span>,
+              improving build performance.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Built the website&apos;s CMS on Payload and MongoDB with reusable
+              blocks, so the marketing team can publish new pages in{" "}
+              <span className="text-foreground font-medium">minutes</span>.
+            </span>
+          </span>
+        </span>
       </span>
     ),
     isCurrent: false,
@@ -38,46 +118,59 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
   },
   {
     company: "Intozi",
-    startDate: "Feb. 2024",
-    endDate: "March. 2025",
+    startDate: "Feb 2024",
+    endDate: "Mar 2025",
     description: (
       <span>
         <span className="text-foreground font-medium">
           As a Software Engineer at Intozi
         </span>
-        , I worked on computer vision surveillance systems, building
-        high-performance infrastructure for realtime video intelligence. I
-        developed a TypeScript based image and video annotation SDK for ML
-        inference workflows and built Golang microservices for realtime media
-        streaming, including a lossless RTSP streaming service that reduced
-        frame latency by ~98% and improved frame quality by ~90%. I also
-        engineered an RTSP recording pipeline that converts live streams into
-        HLS (M3U8), supports optional FFmpeg compression, and stores recordings
-        for reliable playback, focusing on performance, scalability, and
-        realworld reliability.
+        , I worked on computer-vision surveillance systems and the real-time
+        video infrastructure behind them.
+        <span className="mt-3 flex flex-col gap-1.5">
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Built a lossless RTSP streaming service in Go that cut frame
+              latency by{" "}
+              <span className="text-foreground font-medium">~98%</span> and
+              improved frame quality by{" "}
+              <span className="text-foreground font-medium">~90%</span>.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Built an RTSP-to-HLS recording pipeline in Go, with optional
+              FFmpeg compression.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Built a TypeScript SDK for annotating images and video in ML
+              inference workflows.
+            </span>
+          </span>
+        </span>
       </span>
     ),
     isCurrent: false,
     link: "https://intozi.io/",
-    logo: "https://intozi.io/wp-content/uploads/2024/04/logo-black-1.png",
+    logo: INTOZI_LOGO,
   },
   {
     company: "Writeroo",
-    startDate: "Jun. 2023",
-    endDate: "Sep. 2023",
+    startDate: "Jun 2023",
+    endDate: "Sep 2023",
     description: (
       <span>
         <span className="text-foreground font-medium">
-          As a Intern Software Engineer at Writeroo
+          As a Software Engineer Intern at Writeroo
         </span>
-        , I built core UI components focused on clean, scalable, and
-        maintainable frontend architecture. I designed and implemented advanced
-        features such as a feature editor and intuitive gesture controls using
-        Tailwind CSS, Next.js, TypeScript, and React. I also created an
-        Instagram like story editor that provides a canvas based editing
-        experience, allowing users to compose images with text, colors, and
-        backgrounds, leveraging React Konva to deliver smooth, interactive, and
-        visually rich content creation workflows.
+        , I built core UI components for a clean, scalable frontend. I designed
+        a feature editor and gesture controls, and an Instagram-style canvas
+        story editor with React Konva.
       </span>
     ),
     isCurrent: false,

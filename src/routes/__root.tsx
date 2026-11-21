@@ -27,7 +27,7 @@ export const Route = createRootRouteWithContext<MyRouterContext>()({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "Hey, Im Jayash",
+        title: "Jayash Tripathy — Software Engineer, Vision AI",
       },
     ],
     links: [

@@ -32,7 +32,7 @@ const ProfileHeader = ({
         <h1 className="inline-block tracking-tighter sm:text-4xl xl:text-5xl/none font-bold font-space-grotesk">
           Jayash Tripathy
         </h1>
-        <p className="opacity-40 text-md">Developer • Engineer • Builder</p>
+        <p className="opacity-40 text-md">Software Engineer • Vision AI • VLMs</p>
         <div className="flex justify-start space-x-4 mt-3 sm:mt-0 px-0">
           {socialLinks.github && (
             <a

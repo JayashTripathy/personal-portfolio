@@ -16,7 +16,10 @@ const ProfessionalExperience = ({
       </h2>
       <div className="flex flex-col gap-12">
         {experiences.map((experience) => (
-          <div key={experience.company} className="flex flex-col gap-3">
+          <div
+            key={`${experience.company}-${experience.startDate}`}
+            className="flex flex-col gap-3"
+          >
             <a
               href={experience.link}
               target="_blank"

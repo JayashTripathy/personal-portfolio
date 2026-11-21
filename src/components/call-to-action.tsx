@@ -1,21 +1,17 @@
 "use client";
 interface CallToActionProps {
-  profileImage?: string;
-  profileAlt?: string;
   linkText?: string;
   linkUrl?: string;
   preText?: string;
 }
 
 export default function CallToAction({
-  profileImage = "https://res.cloudinary.com/jayash/image/upload/v1708275065/portfolio/jayash.png",
-  profileAlt = "Profile",
   linkText = "Book a Free Call",
   linkUrl = "https://cal.com/jayash-tripathy/15min",
-  preText = "If you've read this far, you might be interested in what I do.",
+  preText = "If you're building with vision AI or VLMs, I'd love to talk.",
 }: CallToActionProps) {
   return (
-    <div className="mt-4 sm:mt-6 pb-6 sm:pb-8 sm:flex sm:justify-between sm:items-center w-full flex-col">
+    <div className="mt-4 sm:mt-6 pb-6 sm:pb-8 px-6 sm:px-8 sm:flex sm:justify-between sm:items-center w-full flex-col">
       <p className="text-neutral-600 dark:text-neutral-400 font-[family-name:var(--font-instrument-serif)] italic text-base sm:text-xl mb-3 sm:mb-3">
         {preText}
       </p>
@@ -24,7 +20,7 @@ export default function CallToAction({
           href={linkUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="gradient h-full bg-zinc-900 dark:bg-zinc-900 rounded-lg text-white text-sm sm:text-md px-4 sm:px-6 py-2.5 sm:py-2 w-full flex items-center justify-center transition-all group relative overflow-hidden touch-manipulation active:opacity-75"
+          className="gradient h-full bg-zinc-900 dark:bg-zinc-900 rounded-lg text-white text-sm sm:text-md px-4 sm:px-6 py-3 sm:py-2 w-full flex items-center justify-center transition-all group relative overflow-hidden touch-manipulation active:opacity-75"
           style={
             {
               "--x": "-90.45457%",
@@ -51,37 +47,7 @@ export default function CallToAction({
             }}
           />
 
-          <div className="flex items-center gap-2 group-hover:gap-6 sm:group-hover:gap-12 transition-all duration-300 relative z-20">
-            <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full overflow-hidden shrink-0">
-              <img
-                alt={profileAlt}
-                width={26}
-                height={26}
-                className="w-full h-full object-cover"
-                src={profileImage}
-                style={{ color: "transparent" }}
-              />
-            </div>
-            <div className="flex items-center gap-0 absolute left-[28px] sm:left-[30px] transform -translate-x-full opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all duration-300">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="lucide lucide-plus w-2 h-2 sm:w-3 sm:h-3"
-              >
-                <path d="M5 12h14"></path>
-                <path d="M12 5v14"></path>
-              </svg>
-              <div className="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-white/10 flex items-center justify-center text-[8px] sm:text-[10px]">
-                You
-              </div>
-            </div>
+          <div className="flex items-center relative z-20">
             <span
               className="whitespace-nowrap relative block text-sm sm:text-base"
               style={{

@@ -11,15 +11,17 @@ const ProfileDescription = ({
   description = (
     <span>
       <span className="font-medium text-foreground italic">
-        I create products holistically
-      </span>
-      , working across frontend, backend, full-stack, and intelligent systems. I
-      stay involved throughout the entire journey shaping the experience,
-      shipping to production, and refining based on user feedback.{" "}
+        I build software where AI models meet real products.
+      </span>{" "}
+      At Intozi, I work with vision AI and vision-language models, building the
+      pipelines, evaluation and product features that turn raw model output
+      into something people can rely on. This is my second stint here. I
+      started out building real-time video infrastructure for our
+      computer-vision systems, spent a year shipping product at Plane, and came
+      back to work closer to the models.{" "}
       <span className="font-medium text-foreground italic">
-        What matters to me is impact, not tooling debates
+        What matters to me is impact, not tooling debates.
       </span>
-      .
     </span>
   ),
 }: ProfileDescriptionProps) => {
