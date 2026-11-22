@@ -83,3 +83,6 @@ routeTree.gen.ts
 *.pem
 *.key
 *.cert
+
+# Next.js build output
+.next/
