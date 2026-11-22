@@ -2,9 +2,11 @@ import CallToAction from "@/components/call-to-action";
 import ProfessionalExperience from "@/components/home/professional-experience";
 import ProfileDescription from "@/components/home/profile-description";
 import ProfileHeader from "@/components/home/profile-header";
+import SideProjects from "@/components/home/side-projects";
 import { Reveal } from "@/components/reveal";
 import SectionBorder from "@/components/section-border";
 import { Spotlight } from "@/components/ui/spotlight";
+import { SIDE_PROJECTS } from "@/constants/side-projects";
 import { WORK_EXPERIENCE } from "@/constants/work-experience";
 import { createFileRoute } from "@tanstack/react-router";
 
@@ -15,6 +17,7 @@ function App() {
     <ProfileHeader />,
     <ProfileDescription />,
     <ProfessionalExperience experiences={WORK_EXPERIENCE} />,
+    <SideProjects projects={SIDE_PROJECTS} />,
     <CallToAction/>
   ];
 
