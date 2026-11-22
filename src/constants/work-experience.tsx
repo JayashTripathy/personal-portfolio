@@ -78,15 +78,26 @@ export const WORK_EXPERIENCE: WorkExperience[] = [
     description: (
       <span>
         <span className="text-foreground font-medium">
-          As a Software Engineer at Plane
+          As a Full Stack Engineer at Plane
         </span>
-        , I built core features of the product and its marketing website.
+        , I built core features across the product&apos;s frontend and
+        backend, and its marketing website.
         <span className="mt-3 flex flex-col gap-1.5">
           <span className="flex gap-2">
             <span aria-hidden="true">•</span>
             <span>
               Built analytics for data visualization, custom dashboards and
               rich filtering for fine-grained data exploration.
+            </span>
+          </span>
+          <span className="flex gap-2">
+            <span aria-hidden="true">•</span>
+            <span>
+              Wrote cleanly architected REST APIs with{" "}
+              <span className="text-foreground font-medium">
+                Django and PostgreSQL
+              </span>{" "}
+              for core product features.
             </span>
           </span>
           <span className="flex gap-2">

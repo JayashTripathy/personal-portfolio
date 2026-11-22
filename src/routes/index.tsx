@@ -9,6 +9,7 @@ import { Spotlight } from "@/components/ui/spotlight";
 import { SIDE_PROJECTS } from "@/constants/side-projects";
 import { WORK_EXPERIENCE } from "@/constants/work-experience";
 import { createFileRoute } from "@tanstack/react-router";
+import { Fragment } from "react";
 
 export const Route = createFileRoute("/")({ component: App });
 
@@ -26,10 +27,10 @@ function App() {
       <Spotlight />
       <div className="min-h-screen bg-background antialiased relative max-w-3xl mx-auto py-12 sm:py-12 border-x">
         {sections.map((section, index) => (
-          <>
-            <Reveal key={index}>{section}</Reveal>
+          <Fragment key={index}>
+            <Reveal>{section}</Reveal>
             <SectionBorder />
-          </>
+          </Fragment>
         ))}
       </div>
     </>

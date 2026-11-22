@@ -8,7 +8,7 @@ interface CallToActionProps {
 export default function CallToAction({
   linkText = "Book a Free Call",
   linkUrl = "https://cal.com/jayash-tripathy/15min",
-  preText = "If you're building with vision AI or VLMs, I'd love to talk.",
+  preText = "Working on vision pipelines, local models or VLMs? Let's talk.",
 }: CallToActionProps) {
   return (
     <div className="mt-4 sm:mt-6 pb-6 sm:pb-8 px-6 sm:px-8 sm:flex sm:justify-between sm:items-center w-full flex-col">
