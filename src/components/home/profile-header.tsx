@@ -22,11 +22,12 @@ const ProfileHeader = ({
   return (
     <div className="flex flex-row gap-6  items-center pb-12 px-6">
       <img
-        src="https://res.cloudinary.com/jayash/image/upload/v1708275065/portfolio/jayash.png"
+        src="/jayash.jpg"
         width={"250"}
         height={"250"}
         alt="Jayash Tripathy"
-        className=" size-26 bg-secondary rounded-full"
+        fetchPriority="high"
+        className="size-26 bg-secondary rounded-full object-cover ring-1 ring-foreground/15 ring-offset-2 ring-offset-background"
       ></img>
       <div className="flex flex-col gap-2">
         <h1 className="inline-block tracking-tighter sm:text-4xl xl:text-5xl/none font-bold font-space-grotesk">
@@ -38,6 +39,8 @@ const ProfileHeader = ({
             <a
               className="hover:opacity-80 touch-manipulation active:opacity-75"
               href={socialLinks.github}
+              aria-label="GitHub profile"
+              title="GitHub profile"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -47,13 +50,15 @@ const ProfileHeader = ({
                 userSelect: "none",
               }}
             >
-              <FaGithub size={18} />
+              <FaGithub size={18} aria-hidden="true" />
             </a>
           )}
           {socialLinks.twitter && (
             <a
               className="hover:opacity-80 touch-manipulation active:opacity-75"
               href={socialLinks.twitter}
+              aria-label="X (Twitter) profile"
+              title="X (Twitter) profile"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -63,13 +68,15 @@ const ProfileHeader = ({
                 userSelect: "none",
               }}
             >
-              <FaXTwitter size={18} />
+              <FaXTwitter size={18} aria-hidden="true" />
             </a>
           )}
           {socialLinks.resume && (
             <a
               className="hover:opacity-80 touch-manipulation active:opacity-75"
               href={socialLinks.resume}
+              aria-label="Resume"
+              title="Resume"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -79,13 +86,15 @@ const ProfileHeader = ({
                 userSelect: "none",
               }}
             >
-              <FaPaperclip size={18} />
+              <FaPaperclip size={18} aria-hidden="true" />
             </a>
           )}
           {socialLinks.linkedin && (
             <a
               className="hover:opacity-80 touch-manipulation active:opacity-75"
               href={socialLinks.linkedin}
+              aria-label="LinkedIn profile"
+              title="LinkedIn profile"
               target="_blank"
               rel="noopener noreferrer"
               style={{
@@ -95,7 +104,7 @@ const ProfileHeader = ({
                 userSelect: "none",
               }}
             >
-              <FaLinkedin size={18} />
+              <FaLinkedin size={18} aria-hidden="true" />
             </a>
           )}
         </div>

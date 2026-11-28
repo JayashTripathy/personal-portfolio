@@ -1,12 +1,12 @@
 export const SITE = {
-	url: "https://jayash.vercel.app",
+	url: "https://jayash.space/",
 	name: "Jayash Tripathy",
 	title: "Jayash Tripathy — Software Engineer, Vision AI",
 	description:
-		"Jayash Tripathy is a software engineer building vision AI and VLM-powered systems at Intozi: video pipelines, model evaluation and the product features built on top of them.",
+		"Software engineer building vision AI and VLM-powered systems at Intozi: real-time video pipelines, model evaluation and product features.",
 	jobTitle: "Software Development Engineer",
 	image:
-		"https://res.cloudinary.com/jayash/image/upload/v1708275065/portfolio/jayash.png",
+		"https://jayash.space/jayash.jpg",
 	twitterHandle: "@jayash_tripathy",
 	sameAs: [
 		"https://github.com/JayashTripathy",

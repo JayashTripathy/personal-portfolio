@@ -28,7 +28,7 @@ function App() {
       <div className="min-h-screen bg-background antialiased relative max-w-3xl mx-auto py-12 sm:py-12 border-x">
         {sections.map((section, index) => (
           <Fragment key={index}>
-            <Reveal>{section}</Reveal>
+            {index < 2 ? section : <Reveal>{section}</Reveal>}
             <SectionBorder />
           </Fragment>
         ))}

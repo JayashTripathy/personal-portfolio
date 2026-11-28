@@ -1,6 +1,5 @@
 import { WorkExperience } from "@/constants/work-experience";
 import ContentParagraph from "../content-paragraph";
-import { FaBriefcase } from "react-icons/fa6";
 
 type ProfessionalExperienceProps = {
   experiences: WorkExperience[];
@@ -28,7 +27,11 @@ const ProfessionalExperience = ({
             >
               <img
                 src={experience.logo}
-                alt={experience.company}
+                alt={`${experience.company} logo`}
+                width={40}
+                height={40}
+                loading="lazy"
+                decoding="async"
                 className="size-10 rounded-lg object-contain flex items-center justify-center"
               />
               <div className="flex flex-col">
